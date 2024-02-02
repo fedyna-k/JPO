@@ -5,22 +5,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="assets/stylesheets/main.css">
+        <script src="assets/scripts/langton.js" defer></script>
 
-        <title>Polytech JPO</title>
+        <title>Polytech JPO - Langton</title>
     </head>
 
     <body>
         <header>
-            <h1>Polytech JPO</h1>
+            <h1>Polytech JPO - Langton</h1>
             <div>
                 <img src="assets/images/Polytech.png" alt="Logo Polytech">
                 <span class="separator"></span>
                 <img src="assets/images/Lis.png" alt="Logo Lis">
             </div>
         </header>
-
+        
         <section>
+            <h2>Définition des paramètres</h2>
+            <p>Ratio pixel</p>
+            <input type="number" id="scale" value="2">
+            <p>Mouvements</p>
+            <input type="text" id="moves" value="DG">
+            <p>Vitesse d'exécution</p>
+            <input type="number" id="speed" value="10">
 
+            <h2>Simulation</h2>
+
+            <canvas></canvas>
         </section>
 
         <footer>
