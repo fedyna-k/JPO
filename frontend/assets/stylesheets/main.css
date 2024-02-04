@@ -54,8 +54,16 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-style: italic;
 }
 
 section {
     padding: 0 2em;
+}
+
+@media (orientation: landscape) {
+    section {
+        display: flex;
+        gap: 2em;
+    }
 }

@@ -1,6 +1,5 @@
 const canvas = {
     element: document.querySelector("canvas"),
-    scale: 1,
     width: 600,
     height: 600
 }
@@ -71,18 +70,20 @@ function init() {
 }
 
 function loop() {
-    for (let i = 0 ; i < speed ; i++) {
-        grid[ant] = (grid[ant] + 1) % max;
-        context.fillStyle = colors[grid[ant]];
+    grid[ant] = (grid[ant] + 1) % max;
+    context.fillStyle = colors[grid[ant]];
 
-        let ant_x = ant % (canvas.width / scale);
-        let ant_y = Math.floor(ant / (canvas.width / scale));
-        context.fillRect(ant_x * scale, ant_y * scale, scale, scale);
-    
-        ant += shifts[direction];
-        direction = (((direction + (sequence[grid[ant]] == "D" ? 1 : -1)) % 4) + 4) % 4;
-    }
+    let ant_x = ant % (canvas.width / scale);
+    let ant_y = Math.floor(ant / (canvas.width / scale));
+    context.fillRect(ant_x * scale, ant_y * scale, scale, scale);
+
+    ant += shifts[direction];
+    direction = (((direction + (sequence[grid[ant]] == "D" ? 1 : -1)) % 4) + 4) % 4;
 }
 
 init();
-setInterval(loop, 0);
+setInterval(() => {
+    for (let i = 0 ; i < speed ; i++) {
+        loop();
+    }
+}, 0);
